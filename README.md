@@ -28,7 +28,7 @@ I set the "birth_date" and "hire_date" columns in the employees table as the "Da
 
 ---
 ## Bonus
-The bonus section was completed in a jupyter notebook file located in the EmployeeSQL subdirectory of the repository, titled [bonus_analysis.ipynb](/EmployeeSQL/bonus_analysis.ipynb).
+The bonus section was completed in a jupyter notebook file located in the EmployeeSQL subdirectory of the repository, titled [bonus_analysis.ipynb](/EmployeeSQL/bonus/bonus_analysis.ipynb).
 
 To complete the analysis in this section, I used SQLAlchemy to import the SQL-Challenge database.
 
