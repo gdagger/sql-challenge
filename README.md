@@ -10,19 +10,21 @@ To begin, I inspected each of the provided CSV files so that I could sketch an E
 
 ![Employee ERD](EmployeeSQL/erd_diagram.png)
 
-Studying this diagram helped me to understand how the information relates to each other and determine the order in which the tables should be created.
+Studying this diagram helped me to understand how the information in each table is related and determine the order in which the tables needed to be created to.
 
 ---
 
 ## Data Engineering
 
-In pgAdmin, I created a database called "SQL-Challenge". I then created the table schema using SQL in PostgreSQL, in the following order so as to handle the foreign keys: titles, employees, salaries, departments, dept_emp, and dept_manager. Once each table was created in the PostgreSQL database, I imported the data from the original CSVs into each table in the same order. The table schemata is saved in the [table_schemata.sql](/EmployeeSQL/table_schemata.sql) file in the assignment repository within the EmployeeSQL subdirectory.
+In pgAdmin, I created a database called "SQL-Challenge". I then created the table schema using SQL in PostgreSQL, in the following order so as to avoid issues with the foreign key references: titles, employees, salaries, departments, dept_emp, and dept_manager. Once each table was created in the PostgreSQL database, I imported the data from the original CSVs into each table in the same order. The table schemata is saved in the [table_schemata.sql](/EmployeeSQL/table_schemata.sql) file in the assignment repository within the EmployeeSQL subdirectory.
 
 ---
 
 ## Data Analysis
 
-For this section, I used the Query Tool in PostgreSQL to find the specified information. These queries are saved in the [employee_queries.sql](EmployeeSQL/employee_queries.sql) file found in the assignment repository.
+For this section, I used the Query Tool in PostgreSQL to query the specified information. These queries are saved in the [employee_queries.sql](EmployeeSQL/employee_queries.sql) file found in the assignment repository. 
+
+I set the "birth_date" and "hire_date" columns in the employees table as the "Date" data type, which presented a minor issue when I had to select managers born in 1986. I observed that using the "Date" data type re-formatted the date column from "MM/DD/YYYY" to "YYYY-MM-DD". In researching how to choose a particular year from dates in this format online, I discovered the "Extract" function which allowed me to extract the year from each row in the hire_date column and select all rows that matched the year 1986.
 
 ---
 ## Bonus
@@ -30,7 +32,7 @@ The bonus section was completed in a jupyter notebook file located in the Employ
 
 To complete the analysis in this section, I used SQLAlchemy to import the SQL-Challenge database.
 
-I then wrote the two SQL queries and, usig the pd.read_sql_query function, imported them into their own dataframes. 
+I then wrote the two SQL queries and, using the pd.read_sql_query function, imported them into their own dataframes. 
 
 In order to get the information to visualize the employee salary ranges that were the most common, I selected the 'emp_no' and 'salary' columns from the salary table in my query. I created a histogram using Plotly Express that shows the number of employees in each salary range from $40k to $130k in increments of $5k. 
 

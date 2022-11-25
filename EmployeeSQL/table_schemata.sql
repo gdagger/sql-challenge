@@ -5,17 +5,17 @@ CREATE TABLE titles (
 
 CREATE TABLE employees (
 	emp_no INT PRIMARY KEY,
-	emp_title_id CHAR(5) REFERENCES titles(title_id),
-	birth_date VARCHAR(30),
-	first_name VARCHAR(30),
-	last_name VARCHAR(30),
+	emp_title_id CHAR(5) NOT NULL REFERENCES titles(title_id),
+	birth_date DATE,
+	first_name VARCHAR(30) NOT NULL,
+	last_name VARCHAR(30) NOT NULL,
 	sex CHAR(1),
-	hire_date VARCHAR(30) NOT NULL
+	hire_date DATE NOT NULL
 );
 
 CREATE TABLE salaries (
 	emp_no INT PRIMARY KEY REFERENCES employees(emp_no),
-	salary INT
+	salary INT NOT NULL
 );
 
 CREATE TABLE departments (
@@ -24,14 +24,12 @@ CREATE TABLE departments (
 );
 
 CREATE TABLE dept_emp (
-	emp_no INTEGER PRIMARY KEY,
-	dept_no CHAR(5) REFERENCES departments(dept_no)
+	emp_no INTEGER NOT NULL REFERENCES employees(emp_no),
+	dept_no CHAR(5) NOT NULL REFERENCES departments(dept_no)
 );
 
 CREATE TABLE dept_manager (
-	dept_no CHAR(5) REFERENCES departments(dept_no),
-	emp_no INT REFERENCES employees(emp_no),
+	dept_no CHAR(5) NOT NULL REFERENCES departments(dept_no),
+	emp_no INT NOT NULL REFERENCES employees(emp_no),
 	PRIMARY KEY(dept_no, emp_no)
 );
-
-DROP TABLE titles, employees, salaries, departments, dept_emp, dept_manager
