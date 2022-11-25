@@ -1,6 +1,6 @@
 # SQL-Challenge
 ## Glen Dagger
-### Week 7 Homework
+### Module 9 Challenge
 
 ---
 
@@ -8,7 +8,7 @@
 
 To begin, I inspected each of the provided CSV files so that I could sketch an Entity Relationship Diagram using [QuickDBD](https://www.quickdatabasediagrams.com/) that shows all of the relationships between the tables, including primary and foreign keys.
 
-![Employee ERD](EmployeeSQL/erd_diagram.png)
+![Employee ERD](ERD_screenshot.png)
 
 Studying this diagram helped me to understand how the information in each table is related and determine the order in which the tables needed to be created to.
 
@@ -36,7 +36,7 @@ I then wrote the two SQL queries and, using the pd.read_sql_query function, impo
 
 In order to get the information to visualize the employee salary ranges that were the most common, I selected the 'emp_no' and 'salary' columns from the salary table in my query. I created a histogram using Plotly Express that shows the number of employees in each salary range from $40k to $130k in increments of $5k. 
 
-![Salary Histogram](EmployeeSQL/images/salary_histogram.png)
+![Salary Histogram](EmployeeSQL/bonus/images/salary_histogram.png)
 
 This histogram shows that by far the highest number of employees are in the lowest salary range of $40k - $45k (a little over 126,000 employees). There are almost 100,000 fewer employees in the $45k-$50k bracket (around 32,000), with diminshing amounts of employees in each subsequent bracket.
 
@@ -44,6 +44,6 @@ This histogram shows that by far the highest number of employees are in the lowe
 
 In order to create a bar chart of average salary per title, I started with the titles table, joined the employees and salaries tables, grouped by title, and selected the title and average salary per title as columns. I then created a bar chart using Plotly Express to display the average salary by job title.
 
-![Average Salary by Title](EmployeeSQL/images/avgsalarybytitle.png)
+![Average Salary by Title](EmployeeSQL/bonus/images/avgsalarybytitle_barchart.png)
 
 This chart shows that the highest earning job title on average is Senior Staff, followed by Staff. I was surprised to see that the titles of Senior Engineer, Engineer, and Assistant Engineer all have roughly the same average salary.

@@ -131,3 +131,4 @@ dmypy.json
 /data
 config.py
 __pycache__
+__DS
