@@ -15,7 +15,7 @@ Studying this diagram helped me to understand how the information in each table 
 
 ## Data Engineering
 
-In pgAdmin, I created a database called "SQL-Challenge". I then created the table schema using SQL in PostgreSQL, in the following order so as to avoid issues with the foreign key references: titles, employees, salaries, departments, dept_emp, and dept_manager. Once each table was created in the PostgreSQL database, I imported the data from the original CSVs into each table in the same order. The table schemata is saved in the [table_schemata.sql](/EmployeeSQL/table_schemata.sql) file in the assignment repository within the EmployeeSQL subdirectory.
+In pgAdmin, I created a database called "SQL-Challenge". I then created the table schema using SQL in PostgreSQL in the following order so as to avoid issues with the foreign key references: titles, employees, salaries, departments, dept_emp, and dept_manager. Once each table was created in the PostgreSQL database, I imported the data from the original CSVs into each table in the same order. The table schemata is saved in the [table_schemata.sql](/EmployeeSQL/table_schemata.sql) file in the assignment repository within the EmployeeSQL subdirectory.
 
 ---
 
