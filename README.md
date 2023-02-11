@@ -1,6 +1,5 @@
 # SQL-Challenge
 ## Glen Dagger
-### Module 9 Challenge
 
 ---
 
